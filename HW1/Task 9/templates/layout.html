@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Компания {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="http://127.0.0.1:5000/">Главная</a>
+            <a href="http://127.0.0.1:5000/clothes">Одежда</a>
+            <a href="http://127.0.0.1:5000/jackets">Куртки</a>
+            <a href="http://127.0.0.1:5000/shoes">Обувь</a>
+        </nav>
+    </header>
+
+    {% block content %}
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem rem sequi eum, cum sint dicta assumenda inventore ex mollitia repellat.</p>
+    {% endblock %}
+
+    <footer>
+        <br>
+        <p>Все права защищены 2023г</p>
+    </footer>
+</body>
+</html>
