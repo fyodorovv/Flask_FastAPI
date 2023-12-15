@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<p>Привет {{ name }}</p>
+
+<form action="/del_cookie" method="post">
+  <input type="submit" value="Удалить cookie">
+</form>
+
+{% endblock %}

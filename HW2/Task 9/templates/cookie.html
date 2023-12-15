@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form action="/cookie_form" method="post">
+  <input type="text" name="name" placeholder="Имя">
+  <input type="email" name="email" placeholder="Email">
+  <input type="submit" value="Отправить">
+</form>
+
+{% endblock %}

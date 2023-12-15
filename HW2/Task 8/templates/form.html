@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+
+<form action="/form" method="post">
+  <input type="text" name="name" placeholder="Имя">
+  <input type="submit" value="Отправить">
+</form>
+
+{% endblock %}
