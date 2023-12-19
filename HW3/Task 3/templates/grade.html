@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% for student in students %}
+<div class="container mb-5">
+    <p>Студент: {{ student.name }} {{ student.last_name }}</p>
+    <p>Группа: {{ student.group }}</p>
+    <p>Email: {{ student.email }}</p>
+
+    <table class="table">
+        <th>Предмет</th>
+        <th>Оценка</th>
+        {% for grade in student.grades|sort(attribute='subject') %}
+        <tr>
+            <td>{{ grade.subject }}</td>
+            <td>{{ grade.grade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endfor %}
+{% endblock content %}

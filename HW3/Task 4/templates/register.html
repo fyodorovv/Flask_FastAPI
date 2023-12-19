@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container text-center mb-5">
+<h1>Регистрация</h1>
+
+{% if notifications %}
+<ul>
+    {% for notification in notifications %}
+    <li>{{ notification }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<form method="POST" action="{{ url_for('register') }}">
+{{ form.csrf_token }}
+{% for field in form if field.name != 'csrf_token' %}
+  <p>
+    {{ field.label }}<br>
+    {{ field }}
+    {% if field.errors %}
+      <ul class="alert alert-danger">
+        {% for error in field.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </p>
+{% endfor %}
+  <p>
+  <input type="submit" value="Register">
+  </p>
+</form>
+</div>
+{% endblock %}
